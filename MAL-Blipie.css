@@ -2,12 +2,7 @@
 |/- -  List Design  - -\|
 |\- Designed by Blipie-/|
 \*- - - - - - - - - - -*/
-/*//////////////////
-   HD Pics
-   /////////////*/
 @\import "https://malscraper.azurewebsites.net/covers/auto/presets/dataimagelinkafter";
-/*If malscraper doesn't work, use the import below instead while waiting for malscraper to work again*/
-/*@\import "https://dl.dropboxusercontent.com/s/uv45ufe75iahzws/animelist_dataimagelinkafter.css";*/
 /*//////////////////
    Fonts
    /////////////*/
@@ -24,6 +19,11 @@
    --menu-clr: #2a3336;
    --menu-slctB-clr: #d1d99c;
    --menu-slctBg-clr: 244, 255, 187;
+   /*
+   */
+   /*- -Images- -*/
+   /*- - - CHANGE LIST BACKGROUND HERE - - -*/
+   --bg-img: url(https://imgur.com/BScnvlZ.png);
    /*
    */
    /*- -Fonts- -*/
