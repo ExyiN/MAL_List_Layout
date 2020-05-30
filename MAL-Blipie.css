@@ -359,7 +359,7 @@ a:hover {
    width: 100%;
    background: none;
    border: none;
-   min-height: calc(100vh - 47.4px);
+   min-height: calc(100vh - 50px);
 }
 
 /*//////////////////
@@ -981,8 +981,17 @@ tbody.list-item:hover {
 /*//////////////////
    Footer
    /////////////*/
+footer {
+   height: 50px;
+}
+
 #footer-block {
    background: none;
+   height: 100%;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 #copyright {
