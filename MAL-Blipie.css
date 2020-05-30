@@ -2,7 +2,6 @@
 |/- -  List Design  - -\|
 |\- Designed by Blipie-/|
 \*- - - - - - - - - - -*/
-@\import "https://malscraper.azurewebsites.net/covers/auto/presets/dataimagelinkafter";
 /*//////////////////
    Fonts
    /////////////*/
@@ -14,7 +13,7 @@
    /////////////*/
 :root {
    /*- -Colors- -*/
-   --prim-clr: #f3f6c3;
+   --prim-clr: #d9c4f6;
    --grey-clr: 75, 88, 92;
    --menu-clr: #2a3336;
    --menu-slctB-clr: #d1d99c;
