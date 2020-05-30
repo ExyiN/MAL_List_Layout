@@ -712,7 +712,6 @@ tbody.list-item:hover {
 .data.started,
 .data.storage,
 .data.studio,
-.data.type,
 .data.tags {
    display: none !important;
 }
