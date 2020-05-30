@@ -882,7 +882,8 @@ tbody.list-item:hover {
 
 /*Anime content status*/
 .list-table .list-table-data .data.title .content-status,
-.list-table .list-table-data .data.title .rewatching {
+.list-table .list-table-data .data.title .rewatching,
+.list-table .list-table-data .data.title .rereading {
    position: absolute;
    bottom: var(--list-item-height);
    left: -10px;
@@ -903,11 +904,13 @@ tbody.list-item:hover {
    background: #E43434;
 }
 
-.list-table .list-table-data .data.title .rewatching {
+.list-table .list-table-data .data.title .rewatching,
+.list-table .list-table-data .data.title .rereading {
    background: #3498E4;
 }
 
-.list-table .list-table-data .data.title .rewatching::before {
+.list-table .list-table-data .data.title .rewatching::before,
+.list-table .list-table-data .data.title .rereading::before {
    content: '\f01e';
    font-family: FontAwesome;
 }
