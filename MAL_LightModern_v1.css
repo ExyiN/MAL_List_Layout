@@ -1,0 +1,603 @@
+/*CUSTOM LAYOUT - LIGHT MODERN - BY EXYIN*/
+/*//////////////////////////////////*/
+/*IMPORT*/
+@\import "https://fonts.googleapis.com/css?family=Carrois+Gothic+SC&display=swap";
+@\import "https://fonts.googleapis.com/css?family=Abel&display=swap";
+
+/*//////////////////////////////////*/
+/*KEYFRAMES*/
+@keyframes fade-in {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+/*//////////////////////////////////*/
+/*ADVANCED OPTIONS*/
+#advanced-options,
+#advanced-options .sort-widget .widget-header,
+#advanced-options .filter-widget .widget-header {
+   font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+#advanced-options input[type="text"],
+#advanced-options select {
+   font-family: 'Abel', sans-serif;
+}
+
+#advanced-options {
+   position: fixed;
+   top: 60px;
+   background-color: #FFF;
+   border: #EBEBEB 2px solid;
+   border-radius: 10px;
+}
+
+#advanced-options .btn-apply,
+#advanced-options .btn-clear {
+   position: relative;
+   background-color: rgba(0, 0, 0, 0.7);
+   border: #BEBEBE 2px solid;
+   right: 15%;
+}
+
+#advanced-options #fancybox-close {
+   visibility: hidden;
+}
+
+#advanced-options #fancybox-close:before {
+   content: "Close";
+   position: relative;
+   background-color: rgba(0, 0, 0, 0.7);
+   top: 451px;
+   right: 300px;
+   color: #FFF;
+   padding: 6.5px 50px;
+   border: #BEBEBE 2px solid;
+   border-radius: 4px;
+   transition: all 0.3s;
+   visibility: visible;
+}
+
+#fancybox-close:hover::before,
+#advanced-options .btn-apply:hover,
+#advanced-options .btn-clear:hover {
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+#advanced-options .sort-widget input[type="radio"]:checked+label {
+   background-color: #157899;
+   border: #157899 1px solid;
+}
+
+/*//////////////////////////////////*/
+/*BODY*/
+body.ownlist {
+   background-image: url(https://imgur.com/sssuWku.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   font-family: 'Carrois Gothic SC', sans-serif;
+   overflow-x: hidden;
+}
+
+/*//////////////////////////////////*/
+/*LINKS*/
+a {
+   color: #4D4D4D;
+}
+
+.list-table .list-table-data a:not(.edit-disabled):hover {
+   text-decoration: none;
+   color: black;
+}
+
+.status-menu-container .status-menu .status-button:hover {
+   color: #4D4D4D;
+}
+
+.list-table .list-table-header .header-title .link.sort:hover {
+   color: #157899;
+}
+
+.list-table .list-table-header .header-title .sort-icon {
+   color: #157899;
+}
+
+i.fa.fa-plus-circle:hover {
+   color: #157899;
+}
+
+/*//////////////////////////////////*/
+/*HEADER*/
+.header {
+   position: fixed;
+   color: #4D4D4D;
+   display: block;
+   width: 100%;
+   height: 40px;
+   top: 0px;
+   background-color: #FFF;
+   box-shadow: 0px 6px 5px -5px rgba(0, 0, 0, 0.4);
+   z-index: 100;
+}
+
+.header .header-title {
+   position: absolute;
+   top: 10px;
+   left: 40px;
+   background-image: url(https://image.myanimelist.net/ui/5LYzTBVoS196gvYvw3zjwFKbp7-DyY8QwUHBkgAuhEY);
+   background-repeat: no-repeat;
+   background-size: contain;
+   display: block;
+   width: 44px;
+   height: 24px;
+   text-indent: -9999px;
+   overflow: hidden;
+   filter: invert(0.7);
+}
+
+.header .header-menu .header-info {
+   margin-top: 10px;
+   margin-right: 58px;
+   text-align: center;
+   color: #4D4D4D;
+   background-color: #FFF;
+   width: 223px;
+   border-radius: 10px;
+   border: #EBEBEB 2px solid;
+}
+
+.header a {
+   color: #4D4D4D;
+}
+
+.header a:hover {
+   text-decoration: none;
+   color: black;
+}
+
+.header .header-menu .btn-menu {
+   visibility: hidden;
+}
+
+.header .header-menu .list-menu {
+   display: block;
+   visibility: hidden;
+}
+
+.header .header-menu .list-menu .icon-menu {
+   position: fixed;
+   top: 6px;
+   right: 82px;
+   width: 124px;
+   height: 25px;
+   visibility: hidden;
+}
+
+.icon-menu.manga-list::before,
+.icon-menu.anime-list::before {
+   position: fixed;
+   top: 6px;
+   right: 82px;
+   display: block;
+   width: 124px;
+   height: 25px;
+   color: #4D4D4D;
+   font-size: 12px;
+   font-weight: initial;
+   text-align: center;
+   line-height: 26px;
+   background-color: transparent;
+   border: #EBEBEB 2px solid;
+   border-radius: 6px;
+   visibility: visible;
+}
+
+.icon-menu.manga-list::before {
+   content: "Go to Manga List";
+}
+
+.icon-menu.anime-list::before {
+   content: "Go to Anime List";
+}
+
+.icon-menu.manga-list:hover::before,
+.icon-menu.anime-list:hover::before {
+   color: black;
+   background-color: #EBEBEB;
+   border-color: #BEBEBE;
+}
+
+.header .username {
+   position: fixed;
+   top: 5px;
+   right: 5px;
+   width: 70px;
+   height: 70px;
+}
+
+.header .username::before {
+   content: "";
+   background-image: url(https://tenor.com/view/violet-evergarden-anime-smile-gif-15898761.gif);
+   background-size: cover;
+   background-position: center;
+   position: fixed;
+   top: 5px;
+   right: 5px;
+   border-radius: 50%;
+   width: 70px;
+   height: 70px;
+   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+   color: transparent;
+   visibility: visible;
+}
+
+/*//////////////////////////////////*/
+/*MENU*/
+.list-menu-float {
+   display: block;
+   position: absolute;
+   top: 450px;
+   left: 10px;
+   width: 500px;
+   height: 0px;
+   text-align: left;
+   border: none;
+}
+
+.list-menu-float .icon-menu {
+   display: inline-block;
+   width: 24px;
+   height: 24px;
+   background-color: #EBEBEB;
+   border-radius: 15px;
+   border: #BEBEBE 2px solid;
+   margin-right: 4px;
+}
+
+.list-menu-float .icon-menu svg.icon {
+   visibility: hidden;
+}
+
+.list-menu-float .icon-menu.profile {
+   background-image: none !important;
+}
+
+.icon-menu.profile::before {
+   content: "\f007";
+   font-family: FontAwesome;
+   font-size: 18px;
+   display: block;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   line-height: 24px;
+   position: absolute;
+}
+
+.icon-menu.quick-add.List_LightBox::before {
+   content: "\f067";
+   font-family: FontAwesome;
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 100%;
+   font-size: 18px;
+   text-align: left;
+   line-height: 24px;
+   left: 5px;
+}
+
+.icon-menu.quick-add.List_LightBox::after,
+.icon-menu.anime-list::after,
+.icon-menu.manga-list::after,
+.icon-menu.logout::after {
+   font-family: FontAwesome;
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 100%;
+   font-size: 18px;
+   text-align: left;
+   line-height: 24px;
+}
+
+.icon-menu.quick-add.List_LightBox::after {
+   content: "\f067";
+   left: 5px;
+}
+
+.icon-menu.anime-list::after {
+   content: "\f108";
+   left: 4px;
+   font-size: 14px;
+   line-height: 26px;
+}
+
+.icon-menu.manga-list::after {
+   content: "\f02d";
+   left: 4px;
+}
+
+.icon-menu.logout::after {
+   content: "\f011";
+   left: 4px;
+}
+
+.list-menu-float .icon-menu.history {
+   display: none;
+}
+
+.list-menu-float .icon-menu.export {
+   display: none;
+}
+
+form {
+   display: inline-block;
+}
+
+.list-menu-float .icon-menu.setting {
+   display: none;
+}
+
+.list-menu-float .icon-menu:not(.profile):hover {
+   background-color: #EBEBEB;
+   width: 100px;
+   border-radius: 15px;
+}
+
+.list-menu-float .icon-menu .text {
+   top: 3px;
+   left: 10px;
+   color: #4D4D4D;
+   font-family: 'Abel', sans-serif;
+   font-size: 14px;
+}
+
+/*//////////////////////////////////*/
+/*LIST CONTAINER*/
+.list-container {
+   background-color: rgba(0, 0, 0, 0.6);
+   border: none;
+   width: 100%;
+}
+
+.list-table {
+   width: 900px;
+   border: none;
+}
+
+.list-table>tbody:nth-of-type(2n+1) {
+   background-color: transparent;
+}
+
+.list-table-header {
+   background: transparent;
+}
+
+.list-table .list-table-header .header-title {
+   background: transparent url("/img/pc/ownlist/bar-table-header.png") no-repeat right 7px / 1px 22px;
+}
+
+.list-table .list-table-header .header-title.status {
+   width: 0px;
+}
+
+.list-table .list-table-header .header-title.number {
+   display: none;
+}
+
+.list-table .list-table-data .data {
+   padding: 9px 18px 9px 20px;
+}
+
+#list-container>div.list-block>div>table>tbody:nth-child(1)>tr>th.header-title.image>a {
+   visibility: hidden;
+}
+
+/*//////////////////////////////////*/
+/*COVER BLOCK*/
+.cover-block {
+   background-image: url(https://imgur.com/8q51Flh.png);
+   background-size: cover;
+   width: 100%;
+   height: 400px;
+}
+
+.cover-block .image-container.hide {
+   display: block;
+}
+
+/*//////////////////////////////////*/
+/*STATUS MENU*/
+.status-menu-container {
+   position: relative;
+   width: 100%;
+   height: 40px;
+   background-color: #FFF;
+   border: none;
+   box-shadow: 0px 6px 5px -5px rgba(0, 0, 0, 0.4),
+      0px -6px 5px -5px rgba(0, 0, 0, 0.4);
+   z-index: 99;
+}
+
+.status-menu-container.fixed {
+   width: 100%;
+   animation: 0.5s fade-in;
+   box-shadow: none;
+   z-index: 100;
+   visibility: hidden;
+}
+
+.status-menu-container .status-menu {
+   visibility: visible;
+}
+
+.status-menu-container .status-menu .status-button {
+   padding: 10px 0;
+   font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+.status-menu-container .status-menu .status-button.on {
+   color: #4D4D4D;
+}
+
+.status-menu-container.fixed .search-container {
+   right: 220px;
+}
+
+.status-menu-container .search-container #search-button {
+   margin-top: 10px;
+   color: #4D4D4D;
+}
+
+.status-menu-container .search-container #search-box {
+   margin-top: 8px;
+}
+
+.status-menu-container .search-container #search-box.open {
+   display: inline-block;
+   width: 100px;
+   border-radius: 10px;
+   border: #9B9B9B 2px solid;
+}
+
+.status-menu-container .search-container #search-box input {
+   border: 0;
+   outline: 0;
+   padding: 0px 5px 0px 5px;
+   background-color: rgba(150, 150, 150, 0.1);
+   font-family: 'Abel', sans-serif;
+}
+
+.status-menu-container .status-menu .status-button:after {
+   display: none;
+}
+
+/*//////////////////////////////////*/
+/*STATUS TITLE*/
+.list-unit .list-status-title {
+   position: absolute;
+   width: 165px;
+   height: 25px;
+   top: 450px;
+   right: 20px;
+   background-color: transparent;
+}
+
+.list-unit .list-status-title .text {
+   display: none;
+}
+
+.list-unit .list-status-title .stats {
+   position: static;
+}
+
+#show-stats-button {
+   position: absolute;
+   right: 0px;
+   background-color: #EBEBEB;
+   width: 75px;
+   height: 25px;
+   border-radius: 6px;
+   border: #BEBEBE 2px solid;
+}
+
+#advanced-options-button {
+   position: absolute;
+   background-color: #EBEBEB;
+   width: 75px;
+   height: 25px;
+   border-radius: 6px;
+   border: #BEBEBE 2px solid;
+}
+
+.list-unit .list-status-title .stats a {
+   margin: 0;
+   text-align: center;
+   line-height: 26px;
+   color: #4D4D4D;
+}
+
+.list-unit .list-stats {
+   width: 884px;
+   color: black;
+   background-color: transparent;
+   border-bottom: #EBEBEB 1px solid;
+   margin: 0 auto;
+}
+
+/*//////////////////////////////////*/
+/*LIST BLOCK*/
+.list-block {
+   background-color: #FFF;
+   border-radius: 20px;
+   width: 930px;
+   margin: 55px auto;
+   margin-bottom: 30px;
+}
+
+.status-menu-container.fixed+div.list-block {
+   margin-top: 95px;
+}
+
+.list-unit {
+   width: 930px;
+}
+
+.list-table .list-table-data .data.title .add-edit-more {
+   float: none;
+}
+
+.data.number {
+   position: absolute;
+   border: #EBEBEB 2px solid !important;
+   background-color: #FFF;
+   border-radius: 50%;
+   padding: 0 !important;
+   width: 18px;
+   height: 18px;
+   margin-top: 9px;
+   margin-left: 14px;
+}
+
+.list-table .list-table-data .data.status {
+   position: absolute;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   padding: 0;
+   margin-left: 20px;
+   margin-top: 58px;
+   border: #FFF 3px solid;
+}
+
+.list-table .list-table-data .data.image .image {
+   width: 64px;
+   height: 64px;
+   border: none;
+   object-fit: cover;
+   border-radius: 50%;
+   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+/*//////////////////////////////////*/
+/*FOOTER BLOCK*/
+#footer-block {
+   margin-top: -30px;
+   background-color: rgba(0, 0, 0, 0.6);
+}
+
+#copyright {
+   color: #BEBEBE;
+   font-family: 'Abel', sans-serif;
+}
+
+#copyright::after {
+   content: "List design by ExyiN.";
+}
