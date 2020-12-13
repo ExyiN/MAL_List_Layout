@@ -1009,3 +1009,8 @@ footer {
 #copyright::after {
    content: 'Designed by Blipie, coded by ExyiN.';
 }
+
+/*Cookies*/
+.qc-cmp2-persistent-link {
+	display: none;
+}
