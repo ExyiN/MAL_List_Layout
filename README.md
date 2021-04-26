@@ -1,4 +1,4 @@
-# MAL_List_Layout - by ExyiN
+## MAL_List_Layout - by ExyiN
 This are CSS codes for custom lists on MyAnimeList
 ### Links to lists
 * Me : https://myanimelist.net/animelist/ExyiN
