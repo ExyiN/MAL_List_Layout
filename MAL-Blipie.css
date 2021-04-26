@@ -1010,6 +1010,10 @@ footer {
    content: 'Designed by Blipie, coded by ExyiN.';
 }
 
+#recaptcha-terms {
+   display: none;
+}
+
 /*Cookies*/
 .qc-cmp2-persistent-link {
 	display: none;
