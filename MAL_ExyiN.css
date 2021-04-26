@@ -1,0 +1,1021 @@
+/*- - - - - - - - - - -*\
+|/- -  List Design  - -\|
+|\- created by ExyiN  -/|
+\*- - - - - - - - - - -*/
+/*//////////////////
+   HD Pics
+   /////////////*/
+@\import "https://malscraper.azurewebsites.net/covers/auto/presets/dataimagelinkafter";
+/*If malscraper doesn't work, use the import below instead while waiting for malscraper to work again*/
+/*@\import "https://dl.dropboxusercontent.com/s/uv45ufe75iahzws/animelist_dataimagelinkafter.css";*/
+/*//////////////////
+   Fonts
+   /////////////*/
+@\import "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap";
+@\import "https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap";
+@\import "https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap";
+
+/*//////////////////
+   Variables
+   /////////////*/
+:root {
+   /*- - -Size- - -*/
+   --menu-width: 250px;
+   /*min-width: 225px to stay clear*/
+   --banner-height: 300px;
+   --nolog-img-height: calc(11 * var(--menu-width) / 12);
+   --sort-btn-height: 30px;
+   --list-item-width: 190px;
+   --list-item-height: 270px;
+   --list-item-bRad: 6px;
+   /*
+   */
+   /*- - -Color- - -*/
+   /*- -Menu, sort button and scrollbar- -*/
+   --dark-clr: #2c2c2c;
+   --normal-clr: #333;
+   --light-clr: #3c3c3c;
+   --menu-text-clr: #fff;
+   --toggle-dark-logo: 0;
+   /*0 to 1 --> 0: white / 1: black*/
+   /*- -Layout colors- -*/
+   --prim-clr: #1A5179;
+   --prim-clr-light: #2c9ed9;
+   --sec-clr: #FFD400;
+   --anim-title-clr: #FCF0B9;
+   /*- -Status menu- -*/
+   --status-menu-background: #fff;
+   --status-menu-border: #ebebeb;
+   --status-button-clr: #3c3c3c;
+   --status-button-on-clr: #2c2c2c;
+   /*- -List background- -*/
+   --list-background: #fff;
+   /*
+   */
+   /*- - -Fonts- - -*/
+   --font-uppercase: 'Bebas Neue', sans-serif;
+   --font-normal: 'Hind Siliguri', sans-serif;
+   --font-nolog: 'Indie Flower', cursive;
+   /*
+   */
+   /*- - -Images- - -*/
+   --banner-img: url(https://imgur.com/23yOlca.png);
+   --header-nolog-img: url(https://imgur.com/mnPv3ic.png);
+   /*12:11 ratio*/
+   /*
+   */
+   /*- - -Not logged in message- - -*/
+   --nolog-msg: 'Not even logged in...\a What a shame.';
+}
+
+/*//////////////////
+   General
+   /////////////*/
+body {
+   margin: 0;
+   padding: 0;
+   overflow-x: auto;
+   min-height: 100vh;
+   font-family: var(--font-normal);
+}
+
+/*- -Scrollbar- -*/
+* {
+   /*For Firefox*/
+   scrollbar-color: var(--prim-clr-light) var(--normal-clr);
+   scrollbar-width: thin;
+}
+
+/*For Chrome like browsers*/
+::-webkit-scrollbar {
+   background: var(--normal-clr);
+   width: 10px;
+   height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+   background: var(--prim-clr-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: var(--prim-clr);
+}
+
+::-webkit-scrollbar-corner {
+   background: var(--normal-clr);
+}
+
+/*- -Links- -*/
+a {
+   color: #fff;
+}
+
+a:hover {
+   text-decoration: none !important;
+}
+
+/*//////////////////
+   Header
+   /////////////*/
+.header {
+   position: fixed;
+   top: 0;
+   background: var(--dark-clr);
+   width: var(--menu-width);
+   height: 50px;
+   padding-bottom: 200vh;
+   z-index: 100;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+/*- -Not logged in image and message- -*/
+.header::before {
+   content: '';
+   position: absolute;
+   top: 200px;
+   background: var(--header-nolog-img);
+   background-size: contain;
+   background-repeat: no-repeat;
+   width: var(--menu-width);
+   height: var(--nolog-img-height);
+}
+
+.header::after {
+   content: var(--nolog-msg);
+   white-space: pre-wrap;
+   position: absolute;
+   top: calc(200px + var(--nolog-img-height));
+   font-size: 1.2rem;
+   font-family: var(--font-nolog);
+   left: 50%;
+   transform: translateX(-50%);
+   opacity: 0.6;
+}
+
+/*- -MAL logo & Viewing X's anime list message- -*/
+/*Logo*/
+.header .header-title {
+   position: relative;
+   top: 0;
+   background-image: url(https://image.myanimelist.net/ui/5LYzTBVoS196gvYvw3zjwFKbp7-DyY8QwUHBkgAuhEY);
+   background-size: contain;
+   width: 50px;
+   height: 20px;
+   margin-left: 20px;
+   transition: transform 300ms;
+   filter: invert(var(--toggle-dark-logo));
+}
+
+.header .header-title:hover {
+   transform: translateY(-2px);
+}
+
+/*Viewing X's anime list message*/
+.header .header-menu {
+   display: none;
+}
+
+.header .header-menu.other {
+   position: relative;
+   top: 0 !important;
+   order: 2;
+   display: block;
+   margin-right: 10px;
+   opacity: 0.6;
+}
+
+.header .header-menu .btn-menu {
+   font-size: 0.7rem;
+}
+
+.header .header-menu .header-info {
+   font-size: 0.6rem;
+   margin: 0;
+}
+
+/*Disabled the swap to manga list*/
+.header .header-menu .btn-menu .header-menu-button {
+   pointer-events: none;
+}
+
+.fa.fa-angle-down {
+   display: none;
+}
+
+/*//////////////////
+   User menu
+   /////////////*/
+.list-menu-float {
+   display: flex;
+   flex-direction: column;
+   top: 50px;
+   width: var(--menu-width);
+   height: 100%;
+   background: var(--normal-clr);
+   border: none;
+   z-index: 100;
+   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+.list-menu-float .icon-menu {
+   width: 100%;
+   min-height: 50px;
+   background: none !important;
+   display: flex;
+   align-items: center;
+}
+
+.list-menu-float .icon-menu:hover::before {
+   content: '';
+   background: var(--prim-clr);
+   width: 5px;
+   height: 100%;
+}
+
+.list-menu-float .icon-menu svg.icon {
+   display: none;
+}
+
+.list-menu-float .icon-menu .text {
+   position: relative;
+   width: 100%;
+   opacity: 1;
+   top: 0;
+   left: 0;
+   text-align: left;
+   margin-left: 20px;
+   font-family: var(--font-uppercase);
+   font-size: 1rem;
+   letter-spacing: 1px;
+   color: var(--menu-text-clr);
+}
+
+.list-menu-float .icon-menu:hover {
+   width: 100% !important;
+   background: var(--light-clr) !important;
+}
+
+.list-menu-float .icon-menu.profile,
+.list-menu-float .icon-menu.logout {
+   margin: 10px 0;
+}
+
+.list-menu-float .icon-menu.profile {
+   border-bottom: 1px solid var(--light-clr);
+}
+
+.list-menu-float .icon-menu.logout {
+   border-top: 1px solid var(--light-clr);
+}
+
+.list-menu-float .icon-menu.profile::after {
+   content: 'Profile';
+   color: var(--menu-text-clr);
+   font-family: var(--font-uppercase);
+   font-size: 1rem;
+   letter-spacing: 1px;
+   margin-left: 20px;
+}
+
+.list-menu-float .icon-menu.setting {
+   display: none;
+}
+
+/*//////////////////
+   List container
+   /////////////*/
+.list-container {
+   width: calc(100% - var(--menu-width));
+   min-width: 750px;
+   min-height: calc(100vh - 50px);
+   margin: 0;
+   margin-left: var(--menu-width);
+   border: none;
+   z-index: 100;
+   background: var(--list-background);
+}
+
+/*//////////////////
+      Banner
+      /////////////*/
+.cover-block {
+   width: 100%;
+   height: var(--banner-height);
+   background: var(--list-background);
+   position: sticky;
+   top: 0;
+   z-index: 200;
+}
+
+/*Image*/
+.cover-block .image-container {
+   background-image: var(--banner-img);
+   background-size: cover;
+   background-position: center;
+   display: block !important;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   box-shadow: 0 -2px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+.cover-block .image-container::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/*Button to go to list design*/
+.cover-block .image-container .btn-list-setting {
+   display: none !important;
+}
+
+/*//////////////////
+      Status menu
+      /////////////*/
+.status-menu-container {
+   width: 100%;
+   position: sticky;
+   top: var(--banner-height);
+   background: var(--status-menu-background);
+   border-bottom: 1px solid var(--status-menu-border);
+   z-index: 100;
+}
+
+.status-menu-container::before {
+   content: '';
+   width: 100%;
+   height: 2px;
+   background: linear-gradient(90deg, #000 0%, var(--prim-clr) 20%, var(--prim-clr-light) 85%);
+   position: absolute;
+   top: 0;
+}
+
+.status-menu-container.fixed {
+   position: sticky;
+   top: var(--banner-height);
+}
+
+.status-menu-container .status-menu {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+
+.status-menu-container .status-menu .status-button {
+   margin: 0 20px;
+   padding: 11px 0;
+   font-family: var(--font-uppercase);
+   letter-spacing: 1px;
+   color: var(--status-button-clr);
+   opacity: 0.8;
+   font-size: 0;
+}
+
+.status-menu-container .status-menu .status-button.on,
+#status-menu .status-button:hover::before {
+   color: var(--status-button-on-clr);
+   font-weight: normal;
+   opacity: 1;
+}
+
+#status-menu .status-button::before {
+   font-size: 1.125rem;
+   display: block;
+}
+
+.status-menu-container .status-menu .status-button:after {
+   background-color: var(--prim-clr);
+   opacity: 1;
+   height: 0;
+   transition: height 200ms;
+}
+
+.status-menu-container .status-menu .status-button.on:after,
+.status-menu-container .status-menu .status-button:hover::after {
+   height: 4px;
+}
+
+.status-menu-container .status-menu .status-button.all_anime::before {
+   content: 'All';
+}
+
+.status-menu-container .status-menu .status-button.watching::before {
+   content: 'Watching';
+}
+
+.status-menu-container .status-menu .status-button.completed::before {
+   content: 'Completed';
+}
+
+.status-menu-container .status-menu .status-button.onhold::before {
+   content: 'Paused';
+}
+
+.status-menu-container .status-menu .status-button.dropped::before {
+   content: 'Dropped';
+}
+
+.status-menu-container .status-menu .status-button.plantowatch::before {
+   content: 'Planned';
+}
+
+/*//////////////////
+      Search bar
+      /////////////*/
+.status-menu-container .search-container {
+   position: relative;
+   right: 0;
+   margin-left: 40px;
+   margin-right: 20px;
+   white-space: nowrap;
+   display: flex;
+   align-items: center;
+   background: #ebebeb;
+   border-radius: 3px;
+}
+
+.status-menu-container .search-container #search-box {
+   width: 120px;
+   height: 28px;
+   margin: 0;
+}
+
+.status-menu-container .search-container #search-box.open {
+   width: 120px;
+}
+
+.status-menu-container .search-container #search-box input {
+   border: none;
+   padding: 0 5px;
+   background: none;
+   font-family: var(--font-normal);
+}
+
+.status-menu-container .search-container #search-box input:focus {
+   outline: none;
+}
+
+.status-menu-container .search-container #search-button {
+   margin: 0;
+   width: 28px;
+   height: 28px;
+   display: grid;
+   place-items: center;
+   font-size: 0.9rem;
+}
+
+/*//////////////////
+      List block
+      /////////////*/
+.list-block {
+   width: 100%;
+   min-height: 0;
+}
+
+.list-unit {
+   width: 85%;
+   margin: 0;
+}
+
+/*- -Stats--*/
+.list-unit .list-status-title {
+   visibility: hidden;
+   width: 0;
+   height: 0;
+   position: static;
+}
+
+.list-unit .list-status-title .text {
+   display: none;
+}
+
+.list-unit .list-status-title .stats {
+   visibility: visible;
+   display: flex;
+   flex-direction: column;
+   right: 20px;
+   height: auto;
+   top: calc(var(--banner-height) + 60px);
+   line-height: normal;
+}
+
+#show-stats-button,
+#advanced-options-button {
+   background: #f1f1f1;
+   height: var(--sort-btn-height);
+   width: 100px;
+   margin: 0;
+   margin-bottom: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 3px;
+   font-size: 0.9rem;
+   color: var(--light-clr);
+   border: 1px solid #efefef;
+   box-sizing: border-box;
+   transition: border-color 200ms, color 200ms;
+}
+
+#show-stats-button:hover,
+#advanced-options-button:hover {
+   border-color: var(--prim-clr);
+   color: var(--prim-clr);
+}
+
+#show-stats-button i,
+#advanced-options-button i {
+   order: 1;
+   margin-left: 4px;
+}
+
+.list-unit .list-stats {
+   width: 90%;
+   background: #f1f1f1;
+   padding: 5px 10px;
+   color: var(--light-clr);
+   margin: 0 auto;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   border: 1px solid var(--prim-clr);
+}
+
+.list-unit .loading-space {
+   margin: 0;
+}
+
+/*- -Sort menu- -*/
+tr.list-table-header {
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   top: calc(var(--banner-height) + 130px);
+   right: 20px;
+   width: 100px;
+   background: var(--normal-clr);
+   border-radius: 3px;
+   height: var(--sort-btn-height);
+   transition: height 300ms;
+   overflow: hidden;
+   z-index: 2;
+}
+
+tr.list-table-header:hover {
+   height: calc(5 * var(--sort-btn-height));
+}
+
+tr.list-table-header::before {
+   content: 'Sort \f078';
+   font-family: var(--font-normal), FontAwesome;
+   font-size: 0.9rem;
+   background: var(--dark-clr);
+   width: 100%;
+   height: var(--sort-btn-height);
+   text-align: center;
+   line-height: var(--sort-btn-height);
+   border-radius: 3px;
+   color: var(--menu-text-clr);
+   z-index: 1;
+}
+
+tr.list-table-header:hover::before {
+   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.list-table .list-table-header .header-title {
+   background: none;
+   width: 100% !important;
+   height: var(--sort-btn-height);
+   border: none;
+   padding: 0 !important;
+}
+
+.list-table .list-table-header .header-title:hover {
+   background: var(--light-clr);
+   border-left: 4px solid var(--prim-clr-light);
+   box-sizing: border-box;
+}
+
+.list-table .list-table-header .header-title .link.sort {
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   line-height: var(--sort-btn-height);
+   font-weight: normal;
+   color: var(--menu-text-clr);
+}
+
+.list-table .list-table-header .header-title .link.sort:hover {
+   color: var(--menu-text-clr);
+}
+
+.list-table .list-table-header .header-title.status,
+.list-table .list-table-header .header-title.number,
+.list-table .list-table-header .header-title.image,
+.list-table .list-table-header .header-title.tags,
+.list-table .list-table-header .header-title.rated,
+.list-table .list-table-header .header-title.days,
+.list-table .list-table-header .header-title.started,
+.list-table .list-table-header .header-title.finished,
+.list-table .list-table-header .header-title.studio,
+.list-table .list-table-header .header-title.licensor,
+.list-table .list-table-header .header-title.storage,
+.list-table .list-table-header .header-title.priority {
+   display: none;
+}
+
+.fa-sort-down:before,
+.fa-sort-desc:before,
+.fa-sort-up:before,
+.fa-sort-asc:before {
+   color: var(--prim-clr-light);
+}
+
+/*- -Anime list- -*/
+.list-table {
+   border: none;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.list-table>tbody:nth-of-type(2n+1) {
+   background: none;
+}
+
+.list-table .list-table-data .data {
+   border: none;
+}
+
+tbody.list-item {
+   width: var(--list-item-width);
+   height: var(--list-item-height);
+   background: none;
+   margin: 7px 5px;
+   position: relative;
+   transform: scale(0.95);
+   transition: transform 150ms, box-shadow 150ms;
+   border-radius: var(--list-item-bRad);
+}
+
+tbody.list-item:hover {
+   transform: scale(1);
+   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.list-table .list-table-data {
+   width: 100%;
+   height: 100%;
+   display: block;
+}
+
+.data.airing-finished,
+.data.airing-started,
+.data.days,
+.data.finished,
+.data.licensor,
+.data.priority,
+.data.rated,
+.data.season,
+.data.started,
+.data.storage,
+.data.studio,
+.data.tags {
+   display: none !important;
+}
+
+/*Anime cover*/
+.list-table .list-table-data .data.image,
+.list-table .list-table-data .data.image .link,
+.list-table .list-table-data .data.image .image,
+.list-table .list-table-data .data.image .link::after {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   object-fit: cover;
+   border-radius: var(--list-item-bRad);
+}
+
+.list-table .list-table-data .data.image {
+   z-index: -1;
+   pointer-events: none;
+}
+
+.list-table .list-table-data .data.image .image {
+   border: none;
+}
+
+/*HD covers*/
+.list-table .list-table-data .data.image .link::after {
+   content: '';
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.list-table .list-table-data .data.image .link::before {
+   content: '';
+   position: absolute;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+   border-radius: var(--list-item-bRad);
+   z-index: 2;
+   transition: opacity 200ms;
+}
+
+.list-table .list-table-data:hover .data.image .link::before {
+   opacity: 0.4;
+}
+
+/*Number*/
+.list-table .list-table-data .data.number {
+   position: absolute;
+   top: 5px;
+   left: 10px;
+   color: rgba(255, 255, 255, 0.6);
+   font-size: 0.9rem;
+}
+
+.list-table .list-table-data .data.number::before {
+   content: '#';
+   font-size: 0.8em;
+}
+
+/*Anime status*/
+.list-table .list-table-data .data.status {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   bottom: 0;
+   left: 0;
+   padding: 0;
+   z-index: 2;
+   border-radius: var(--list-item-bRad);
+   background: none !important;
+   border-bottom: 4px solid;
+   box-sizing: border-box;
+   pointer-events: none;
+}
+
+.data.status.watching {
+   border-color: #2db039 !important;
+}
+
+.data.status.completed {
+   border-color: #26448f !important;
+}
+
+.data.status.onhold {
+   border-color: #f1c83e !important;
+}
+
+.data.status.dropped {
+   border-color: #a12f31 !important;
+}
+
+.data.status.plantowatch {
+   border-color: #c3c3c3 !important;
+}
+
+/*Anime title*/
+.list-table .list-table-data .data.title {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 5px;
+   padding-bottom: 30px;
+   background: rgba(44, 44, 44, 0.8);
+   width: 100%;
+   box-sizing: border-box;
+   border-radius: 0 0 var(--list-item-bRad) var(--list-item-bRad);
+}
+
+.list-table .list-table-data .data.title .link {
+   font-size: 0.825rem;
+   transition: color 200ms;
+}
+
+.list-table .list-table-data .data.title .link:hover {
+   color: var(--anim-title-clr);
+}
+
+.icon-watch,
+.icon-watch-pv {
+   display: none !important;
+}
+
+/*Progress*/
+.list-table .list-table-data .data.progress {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 0 5px;
+   width: 100%;
+   height: 25px;
+   text-align: left;
+   line-height: 25px;
+   box-sizing: border-box;
+   color: #fff;
+}
+
+.fa-plus-circle::before {
+   content: '+' !important;
+   font-size: 0.9rem;
+   transition: color 200ms;
+}
+
+.fa-plus-circle:hover::before {
+   color: var(--sec-clr);
+}
+
+/*Score*/
+.list-table .list-table-data .data.score {
+   position: absolute;
+   top: 5px;
+   right: 10px;
+}
+
+.list-table .list-table-data .data.score .link {
+   font-size: 1rem;
+   text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+/*Anime content status*/
+.list-table .list-table-data .data.title .content-status,
+.list-table .list-table-data .data.title .rewatching {
+   position: absolute;
+   bottom: var(--list-item-height);
+   left: -10px;
+   padding: 2px 15px;
+   border-radius: 50px;
+   color: #fff;
+   transform: translateY(50%);
+   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+   font-size: 0.8rem;
+}
+
+.list-table .list-table-data .data.title .content-status::before {
+   content: '\f111';
+   font-family: FontAwesome;
+}
+
+.list-table .list-table-data .data.title .content-status {
+   background: #E43434;
+}
+
+.list-table .list-table-data .data.title .rewatching {
+   background: #3498E4;
+}
+
+.list-table .list-table-data .data.title .rewatching::before {
+   content: '\f01e';
+   font-family: FontAwesome;
+}
+
+/*Add - Edit - More buttons*/
+.list-table .list-table-data .data.title .add-edit-more {
+   visibility: hidden;
+   margin-right: 0;
+   position: absolute;
+   top: -20px;
+   right: 5px;
+   font-size: 0;
+}
+
+.list-table .list-table-data:hover .data.title .add-edit-more .edit,
+.list-table .list-table-data:hover .data.title .add-edit-more .add {
+   visibility: visible;
+}
+
+.list-table .list-table-data .data.title .add-edit-more .edit a::before {
+   content: '\f044';
+}
+
+.list-table .list-table-data .data.title .add-edit-more .add a::before {
+   content: '\f067';
+}
+
+.list-table .list-table-data .data.title .add-edit-more .edit a::before,
+.list-table .list-table-data .data.title .add-edit-more .add a::before {
+   font-family: FontAwesome;
+   font-size: 18px;
+   position: absolute;
+   right: 0;
+   cursor: pointer;
+   transform: scale(0.95);
+   transition: transform 200ms;
+   text-shadow: 0 0 3px #000;
+   color: var(--sec-clr);
+}
+
+.list-table .list-table-data .data.title .add-edit-more .edit a:hover::before,
+.list-table .list-table-data .data.title .add-edit-more .add a:hover::before {
+   transform: scale(1);
+}
+
+.list-table .list-table-data .data.title .more {
+   display: none;
+}
+
+.list-table .list-table-data a.edit-disabled {
+   color: #fff;
+}
+
+/*Anime type*/
+.list-table .list-table-data .data.type {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   color: #fff;
+   z-index: 2;
+   padding: 0 5px;
+   box-sizing: border-box;
+   height: 25px;
+   line-height: 25px;
+}
+
+/*//////////////////
+   Footer
+   /////////////*/
+footer {
+   width: calc(100% - var(--menu-width));
+   margin-left: var(--menu-width);
+   min-width: 750px;
+   position: absolute;
+   z-index: 200;
+   height: 50px;
+}
+
+#footer-block {
+   background-color: var(--dark-clr);
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0;
+}
+
+#copyright {
+   color: var(--menu-text-clr);
+   opacity: 0.6;
+   padding: 0;
+   font-family: var(--font-normal);
+}
+
+#copyright::after {
+   content: 'List layout designed by ExyiN. ';
+}
+
+#recaptcha-terms {
+   display: none;
+}
+
+/*//////////////////
+   Advanced options
+   /////////////*/
+#advanced-options {
+   position: fixed;
+}
+
+#advanced-options,
+#advanced-options input,
+#advanced-options select,
+#advanced-options .advanced-options-header .description {
+   font-family: var(--font-normal);
+   letter-spacing: normal;
+}
+
+#advanced-options .advanced-options-header {
+   font-family: var(--font-uppercase);
+   letter-spacing: 1px;
+}
+
+#advanced-options .sort-widget input[type=radio]:checked+label {
+   background-color: #fff;
+   border-color: var(--prim-clr);
+   color: var(--prim-clr);
+}
+
+/*#advanced-options .btn-apply,
+#advanced-options .btn-clear {}*/
+
+
+/*Cookies*/
+.qc-cmp2-persistent-link {
+	display: none;
+}
