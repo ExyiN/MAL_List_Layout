@@ -22,7 +22,7 @@
    /*- - -Size- - -*/
    --menu-width: 250px;
    /*min-width: 225px to stay clear*/
-   --banner-height: 300px;
+   --banner-height: 200px;
    --nolog-img-height: calc(11 * var(--menu-width) / 12);
    --sort-btn-height: 30px;
    --list-item-width: 190px;
