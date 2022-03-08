@@ -962,7 +962,7 @@ footer {
 
 #footer-block {
    background-color: var(--dark-clr);
-   width: 100%;
+   width: 100% !important;
    height: 100%;
    display: flex;
    align-items: center;
