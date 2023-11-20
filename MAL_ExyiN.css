@@ -55,17 +55,17 @@
    /*- - -Fonts- - -*/
    --font-uppercase: 'Bebas Neue', sans-serif;
    --font-normal: 'Hind Siliguri', sans-serif;
-   --font-nolog: 'Indie Flower', cursive;
+/*    --font-nolog: 'Indie Flower', cursive; */
    /*
    */
    /*- - -Images- - -*/
    /*--banner-img: url(https://imgur.com/23yOlca.png);*/
-   --header-nolog-img: url(https://imgur.com/qlBWYkX.png);
+/*    --header-nolog-img: url(https://imgur.com/qlBWYkX.png); */
    /*12:11 ratio*/
    /*
    */
    /*- - -Not logged in message- - -*/
-   --nolog-msg: 'Not logged in...\a Uh...';
+/*    --nolog-msg: 'Not logged in...\a Uh...'; */
 }
 
 /*//////////////////
@@ -131,7 +131,7 @@ a:hover {
 }
 
 /*- -Not logged in image and message- -*/
-.header::before {
+/* .header::before {
    content: '';
    position: absolute;
    top: 200px;
@@ -152,7 +152,7 @@ a:hover {
    left: 50%;
    transform: translateX(-50%);
    opacity: 0.6;
-}
+} */
 
 /*- -MAL logo & Viewing X's anime list message- -*/
 /*Logo*/
